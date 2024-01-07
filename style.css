@@ -30,6 +30,10 @@ h1, h2 {
     font-size: 37px;
 }
 
+.bitcoin-price > h2 {
+    margin-bottom: 20px;
+}
+
 img#imagem {
     width: 350px;
     height: 350px;
