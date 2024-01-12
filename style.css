@@ -37,6 +37,56 @@ h1, h2 {
 img#imagem {
     width: 350px;
     height: 350px;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    body {
+        display: flex;
+    }
+
+    h1, h2 {
+        font-size: 25px;
+    }
+
+    #bitcoin-price {
+        font-size: 22px;
+        width: 80vw;
+        text-align: center;
+        padding: 30px;
+      
+    }
+
+    img#imagem {
+        width: 300px;
+        height: 300px;
+        
+
+    }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    body {
+        display: flex;
+    }
+
+    h1, h2 {
+        font-size: 30px;
+    }
+
+    #bitcoin-price {
+        font-size: 25px;
+        text-align: center;
+        padding: 40px;
+        
+    }
+
+    img#imagem {
+        width: 330px;
+        height: 330px;
+    }
 }
 
 
