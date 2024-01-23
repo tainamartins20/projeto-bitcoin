@@ -48,5 +48,3 @@ function updateBitcoinPrice() {
     setInterval(fetchBitcoinPrice, 30000)
 }
 window.onload = updateBitcoinPrice
-
-
