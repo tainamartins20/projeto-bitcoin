@@ -6,8 +6,8 @@ function fetchBitcoinPrice() {
     .then(response => response.json())
     .then(data => {
         console.log('Dados retornados pela API:', data)
-        if (Array.isArray(data) && data.length > 0  && data[0].price !== undefined) {
-            const precoBitcoin = parseFloat(data[0].price).toFixed(2)
+        if (data.symbol === 'BTCUSDT' && typeof data.price === 'string') {
+            const precoBitcoin = parseFloat(data.price).toFixed(2)
             res.innerHTML = `$${precoBitcoin}`
 
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl')
@@ -32,8 +32,9 @@ function fetchBitcoinPrice() {
 
 
 function processarConversaoPrecoBitcoin(coingeckoData, precoBitcoin) {
-        if (coingeckoData.bitcoin && coingeckoData.bitcoin.brl) {
-         const precoReal = coingeckoData.bitcoin.brl.toFixed(2)
+    const bitcoinData = coingeckoData.bitcoin
+        if (bitcoinData && bitcoinData.hasOwnProperty('brl') {
+         const precoReal = parseFloat(bitcoinData.brl).toFixed(2)
          brlRes.innerHTML = `R$${precoReal}`
         } else {
             console.error('Erro ao obter o preço em reais. Resposta da API:', coingeckoData)
