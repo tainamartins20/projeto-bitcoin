@@ -2,7 +2,7 @@ const res = document.getElementById('res')
 const brlRes = document.getElementById('brl-res')
 
 function fetchBitcoinPrice() {
-    fetch('https://api.binance.us/api/v3/trades?symbol=BTCUSDT')
+    fetch('https://api.binance.us/api/v3/ticker/price?symbol=BTCUSDT')
     .then(response => response.json())
     .then(data => {
         console.log('Dados retornados pela API:', data)
