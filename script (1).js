@@ -1,3 +1,4 @@
+
 const res = document.getElementById('res')
 const brlRes = document.getElementById('brl-res')
 
@@ -33,9 +34,9 @@ function fetchBitcoinPrice() {
 
 function processarConversaoPrecoBitcoin(coingeckoData, precoBitcoin) {
     const bitcoinData = coingeckoData.bitcoin
-        if (bitcoinData && bitcoinData.hasOwnProperty('brl') {
-         const precoReal = parseFloat(bitcoinData.brl).toFixed(2)
-         brlRes.innerHTML = `R$${precoReal}`
+    if (bitcoinData && bitcoinData.hasOwnProperty('brl')) {
+        const precoReal = parseFloat(bitcoinData.brl).toFixed(2);
+        brlRes.innerHTML = `R$${precoReal}`
         } else {
             console.error('Erro ao obter o preço em reais. Resposta da API:', coingeckoData)
             brlRes.innerHTML = 'Erro ao obter o preço.'
